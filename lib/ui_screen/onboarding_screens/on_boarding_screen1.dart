@@ -15,7 +15,7 @@ class OnBoardingScreen1 extends StatelessWidget {
       seconText:
           'Pay securely with just one tap. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Easy, fast, and reliable payment experience.',
       onTap: () {
-        Navigator.pushNamed(context, AppRoutes.onBoardingScreen2);
+        Navigator.pushReplacementNamed(context, AppRoutes.onBoardingScreen2);
       },
     );
   }

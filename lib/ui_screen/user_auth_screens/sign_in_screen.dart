@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/commons/app_images/assets_image.dart';
+import 'package:food_app/commons/app_routes/app_routes.dart';
 import 'package:food_app/commons/app_style/app_colors.dart';
 import 'package:food_app/commons/app_style/app_sizes.dart';
 import 'package:food_app/commons/app_style/app_text_style.dart';
@@ -53,15 +54,20 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
           ),
           AppSizes.screenGap(),
-          // Check Box
-          AppCheckBox(
-            onTap: () {
-              setState(() {
-                checkBoxValue = !checkBoxValue;
-              });
-            },
-            value: checkBoxValue,
-            text1: 'Remember us',
+          // Forget Password Text Button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.forgetPasswordScreen);
+                },
+                child: Text(
+                  'Forget password ?',
+                  style: AppTextStyle.secondTStyle.copyWith(color: Colors.blue),
+                ),
+              ),
+            ],
           ),
           AppSizes.screenGap(height: 40),
           // Sign Up Button

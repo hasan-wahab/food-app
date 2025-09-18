@@ -15,13 +15,13 @@ class AppTextStyle {
   // Heading Line N 1 Text Style
 
   static final firstTStyle = TextStyle(
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: FontWeight.bold,
   );
 
   //  TEXT STYLE N2
   static final secondTStyle = TextStyle(
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: FontWeight.w400,
     color: Colors.grey,
   );

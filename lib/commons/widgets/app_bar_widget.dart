@@ -4,6 +4,7 @@ import 'package:food_app/commons/app_style/app_sizes.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leadingWidget;
+  final String? leadingProfileImage;
   final VoidCallback? leadingOnTap;
   final Widget? actionWidget;
   final Widget? title;
@@ -13,6 +14,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
     this.actionWidget,
     this.title,
     this.leadingOnTap,
+    this.leadingProfileImage,
   });
 
   @override
@@ -32,15 +34,37 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                         width: 50,
                         decoration: BoxDecoration(
                           color: AppColors.primaryGreyColor,
+                          image: leadingProfileImage != null
+                              ? DecorationImage(
+                                  image: NetworkImage(leadingProfileImage!),
+                                  fit: BoxFit.cover,
+                                )
+                              : null,
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: leadingWidget,
                       ),
                     ),
                   )
-                : Align(
-                    alignment: Alignment.centerLeft,
-                    child: SizedBox(height: 50, width: 50),
+                : InkWell(
+                    onTap: leadingOnTap,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          color: AppColors.primaryGreyColor,
+                          image: leadingProfileImage != null
+                              ? DecorationImage(
+                                  image: NetworkImage(leadingProfileImage!),
+                                  fit: BoxFit.cover,
+                                )
+                              : null,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
                   ),
 
             // Title Widget

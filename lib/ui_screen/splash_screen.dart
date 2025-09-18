@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3)).whenComplete(() {
-      Navigator.pushNamed(context, AppRoutes.onBoardingScreen1);
+      Navigator.pushReplacementNamed(context, AppRoutes.onBoardingScreen1);
     });
     super.initState();
   }
